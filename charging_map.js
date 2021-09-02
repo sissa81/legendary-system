@@ -9,8 +9,6 @@ var myMap = L.map("map", {
 
 function createMap(chargers) {
     
-    
-    
      // Add a tile layer.
      var charge = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -23,12 +21,7 @@ d3.json(queryURL).then(function (response) {
     // Once we get a response, send the data.features object to the createFeatures function.
     // Create a new marker cluster group.
      
-    var markers = L.marker([
-        L.latLng(
-            parseFloat(item['latitude']),
-            parseFloat(item['longitude'])
-        )
-    ]);
+    var markers = L.marker();
 
     // Loop through the data.
     for (var i = 0; i < response.length; i++) {
@@ -39,8 +32,8 @@ d3.json(queryURL).then(function (response) {
       // Check for the location property.
       if (location) {
   
-        // Add a new marker to the cluster group, and bind a popup.
-        markers.addLayer(L.marker([fuel_stations.latitude, fuel_stations.longitude])
+        // Add a new marker to the cluster group, and bind a popup. ***THIS IS WHERE I AM STUCK!***
+        markers.addLayer(L.marker(parseFloat(markers[fuel_stations.latitude]), parseFloat(markers[fuel_stations.longitude]))
           .bindPopup(response[i].city));
       }
 
