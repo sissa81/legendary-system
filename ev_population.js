@@ -18,6 +18,7 @@ var groupedData = d3.nest()
 console.log(groupedData);
 
 
+
 // var groupedData = d3.nest()
 // .key(function(d) {return d.datayear; })
 // .rollup(function(v) {
