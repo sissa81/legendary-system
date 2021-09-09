@@ -1,7 +1,7 @@
-# legendary-system
-![Image](https://github.com/sissa81/legendary-system/tree/main/Part%20III/Images/supercharger_tesla.jfif)
+# Supercharger Location Analysis
+![Image](Part%20III/Images/supercharger_tesla.jfif)
 
-## Objective: Supercharger Location Analysis
+## Objective
 A group project for visualization of supercharger stations in California to navigate best locations to implement supercharger stations based on current saturations and EV populations.
 
 ## Team Members
@@ -33,9 +33,9 @@ https://www.carvana.com/cars/tesla<br>
 * [Line chart](https://github.com/sissa81/legendary-system/blob/main/choxie/Data/linechart.png) to show the EV population from the registration data
 
 ### Part III - Flask App and Webscraping
-* Utilized Flask app to connect `MongoDB` with different Tesla models to show examples of supercharger EVs in a [database](https://github.com/sissa81/legendary-system/tree/main/Part%20III/Images/mongodb_tesla.png) called `tesla_app` 
-* Get information (make, model, price, and images) of Tesla models by web-scraping off of [Carvanas](https://www.carvana.com/cars/tesla)
-* Generate [Tesla Scraper](https://github.com/sissa81/legendary-system/tree/main/Part%20III/Images/tesla_scraper.png) to display above data in one single html site
+* Utilized Flask app to connect `MongoDB` with different Tesla models to show examples of superchargeable EVs in a [database](https://github.com/sissa81/legendary-system/tree/main/Part%20III/Images/mongodb_tesla.png) named `tesla_app` 
+* Get information (make, model, price, and images) of Tesla models by web-scraping off of [Carvanas](https://www.carvana.com/cars/tesla) site
+* Generate [Tesla Scraper](https://github.com/sissa81/legendary-system/tree/main/Part%20III/Images/tesla_scraper.png) to display above data in a single html site
 
 ## Requirements
 * Your visualization must include a Python Flask–powered API, HTML/CSS, JavaScript, and at least one database (SQL, MongoDB, SQLite, etc.). 
