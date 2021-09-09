@@ -24,21 +24,22 @@ var myMap = L.map("map", {
 var chargeMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
-  
+
+console.log(myMap)
 // Create the markers for chargeStations
 
 var queryURL = "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?api_key=1YJXSdZ3NnAyyfQjUFBbTnYFAF9lp57gm2pKe94r&fuel_type=ELEC&status=E&access=public&state=CA&limit=all"
 
 // Perform a GET request to the query URL/
-d3.json(queryURL).then(function (data) {
-  //console.log(data)
-  
- for (var = 0; i < data.length; i++) {
-   var fuel_station = data[i].fuel_stations;
+d3.json(queryURL).then(function(response) {
+  console.log(response)
+ for (var i = 0; i < response.length; i++) {
 
+   var fuel_stations = response[i].fuel_stations;
+    
    if (fuel_stations) {
      L.marker([fuel_stations.latitude, fuel_stations.longitude]).addTo(myMap);
-   }
+   }   
  }
 });
 
@@ -59,8 +60,3 @@ d3.json(queryURL).then(function (data) {
 
 //  console.log(myMap)
 //};
-
-
-
-
-console.log(myMap)
