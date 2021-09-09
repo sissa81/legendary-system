@@ -17,12 +17,16 @@
         </div>
     </div>
 
-    <!-- Tesla -->
     <div class="container">
         <div class="row" >
             <div class="col-md-8 col-sm-12">
                 <h3 style="font-weight: bold;">Tesla Image</h3>
-                <img style ="max-width: 100%; max-height: auto;" src="{{ tesla.tesla_image }}" alt="Tesla Image">
+                {% for tesla in teslas %}
+                <p> {{ tesla.make }} </p>
+                <p> {{ tesla.model }} </p>
+                <p> {{ tesla.price }} </p>
+                <img style ="max-width: 100%; max-height: auto;" src= '{{ tesla.image }}' alt="Tesla Image">
+                {% endfor %}
             </div>
         </div>
     </div>

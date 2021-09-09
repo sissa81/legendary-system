@@ -9,16 +9,17 @@ app.config['MONGO_URI'] = "mongodb://localhost:27017/tesla_app"
 mongo = PyMongo(app)
 
 @app.route("/")
-def home(): 
-    tesla = mongo.db.tesla.find_one()
+def home():
+    teslas = mongo.db.tesla.find()
 
-    return render_template("index.html", tesla=tesla)
+    return render_template("index.html", teslas=teslas)
 
 @app.route("/scrape")
-def scrape(): 
+def scrape():
     tesla = mongo.db.tesla
     tesla_data = scrape_tesla.scrape_all()
-    tesla.update({}, tesla_data, upsert=True)
+    tesla.delete_many({})
+    tesla.insert_many(tesla_data)
 
     return redirect("/", code=302)
 
