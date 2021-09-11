@@ -20,8 +20,11 @@ Michael Farm<br>
 `MongoDB`
 
 ## Data Source
-https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/ - Using for EV Charger Mapping<br>
+**The National Renewable Energy Laboratory**<br>
+https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/<br>
+**Alternative Fuels Data Center**<br>
 https://afdc.energy.gov/data/search?q=electricity<br>
+**Carvana**<br>
 https://www.carvana.com/cars/tesla<br>
 
 ## Extract, Transform, Load (ETL)
