@@ -52,4 +52,4 @@ function createMarkers(response) {
   createMap(L.layerGroup(fuelMarkers));
 }
 
-d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json").then(createMarkers);
+d3.json(queryURL).then(createMarkers);
