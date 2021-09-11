@@ -6,53 +6,31 @@ const csvdata = "https://raw.githubusercontent.com/sissa81/legendary-system/main
 d3.csv(csvdata).then(function(data) {
   data.forEach(function(d){d['no_vehicles'] = +d['no_vehicles']; });
   console.log(data);
-  var temp = data[0]['reg_year']
-  console.log(temp)
+
+  x = [data[0]['reg_year'], data[1]['reg_year'], data[2]['reg_year'], data[3]['reg_year'], data[4]['reg_year'], 
+    data[5]['reg_year'], data[6]['reg_year'], data[7]['reg_year'], data[8]['reg_year'], data[9]['reg_year'], data[10]['reg_year']]
+  y = [data[0]['no_vehicles'], data[1]['no_vehicles'], data[2]['no_vehicles'], data[3]['no_vehicles'], data[4]['no_vehicles'], 
+    data[5]['no_vehicles'], data[6]['no_vehicles'], data[7]['no_vehicles'], data[8]['no_vehicles'], data[9]['no_vehicles'], data[10]['no_vehicles']]
 
 
 // Create Bar Chart
   function barchart () {    
     var bardata = [{
-        x: data[0]['reg_year'],
-        y: data[0]['no_vehicles'],
+        x: x,
+        y: y,
         type: 'bar'        
     }];
   
     var barlayout = {                
         hovermode: 'closest',        
         height: 600,
-        width: 350,
+        width: 600,
         showlegend: false
     };
   
     Plotly.newPlot('bar', bardata, barlayout);
-};
-  
-// // Create Bar Chart
-// function barchart () {  
-//   var bardata = [{
-//       x: data.reg_year,
-//       y: data.no_vehicles,
-//       type: 'bar',            
-//       marker: {
-//           color: 'rgb(0,65,130)'
-//       }
-//   }];
+};  
 
-//   var barlayout = {              
-//       hovermode: 'closest',
-//       yaxis: {
-//           type: 'category',
-          
-//       },
-//       height: 600,
-//       width: 350,
-//       showlegend: false
-//   };
-
-//   Plotly.newPlot('bar', bardata, barlayout);
-// };
 
 barchart();
-
 });
