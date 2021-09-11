@@ -1,11 +1,10 @@
 // Read in csv from git
-const csvdata = "https://raw.githubusercontent.com/sissa81/legendary-system/main/choxie/Data/Zip_Pop_04-30-2021.csv";
+const csvdata = "https://raw.githubusercontent.com/sissa81/legendary-system/main/choxie/Data/yearly_data.csv";
 
 // Fetch csv data and console log it
 // Convert # of vehicles to number instead of string
-var yearlyData = d3.csv(csvdata).then(function(data) {
-  data.forEach(function(d){d['novehicles'] = +d['novehicles']; });
-  // console.log(data);
+d3.csv(csvdata).then(function(data) {
+  console.log(data);
 
 
 
