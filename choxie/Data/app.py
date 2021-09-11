@@ -1,11 +1,12 @@
-import numpy as np
+from flask import Flask, render_template
+import pandas as pd
+import json
+import plotly
+import plotly.express as px
 
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
+app = Flask(__name__)
 
-from flask import Flask, jsonify
-
-engine = create_engine("sqlite:///yearly_db.sqlite")
+@app.route('/')
+def notdash():
+    df = pd.DataFrame()
 
