@@ -39,7 +39,12 @@ def scrape_all():
     teslas = teslas + scrape_page(browser)
     browser.find_by_text('Next').first.click()
     teslas = teslas + scrape_page(browser)
-
+    browser.find_by_text('Next').first.click()
+    teslas = teslas + scrape_page(browser)
+    browser.find_by_text('Next').first.click()
+    teslas = teslas + scrape_page(browser)
+    
     browser.quit()   
 
-    return teslas   
+    return teslas  
+     
