@@ -56,8 +56,10 @@ d3.csv(csvdata).then(function(data) {
         width: 1000,        
         showlegend: false
     };
-  
-    Plotly.newPlot('bar', bardata, barlayout);
+    
+    var config = {responsive: true};
+
+    Plotly.newPlot('bar', bardata, barlayout, config);
 };  
 
 barchart();
