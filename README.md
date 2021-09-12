@@ -24,6 +24,8 @@ Michael Farm<br>
 https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/<br>
 **Alternative Fuels Data Center**<br>
 https://afdc.energy.gov/data/search?q=electricity<br>
+**California Energy Commission**<br>
+https://www.energy.ca.gov/files/zev-and-infrastructure-stats-data<br>
 **Carvana**<br>
 https://www.carvana.com/cars/tesla<br>
 
