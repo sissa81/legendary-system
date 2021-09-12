@@ -32,6 +32,10 @@ d3.csv(csvdata).then(function(data) {
     
     var barlayout = {                      
         hovermode: 'closest',                
+        title: {
+          text: 'Historical Electric Vehicle Registraiton Data from California Energy Commission',
+          size: 18
+        },
         xaxis: {
           type: 'category',
           title: {            
