@@ -5,11 +5,11 @@ const csvdata = "https://raw.githubusercontent.com/sissa81/legendary-system/main
 // Convert # of vehicles to number instead of string
 var yearlyData = d3.csv(csvdata).then(function(data) {
   data.forEach(function(d){d['Number of Vehicles'] = +d['Number of Vehicles']; });
+  data.forEach(function(d){d['ZIP'] = +d['ZIP']; });
   console.log(data);
 
 
-
-// Nest and group by year.
+// Nest and group by year and fuel type, sum number of vehicles
 var groupedData = d3.nest()
 .key(function(d) {return d['Fuel Type']; })
 .key(function(d) {return d['Data Year']; })
@@ -19,6 +19,7 @@ console.log(groupedData);
 // See how to pull out electric vehicle data
 console.log(groupedData[2]['values'][0]['key']);
 
+// ELECTRIC VEHICLES
 // Empty arrays to hold plot points
 xplots = []
 yplots = []
@@ -41,7 +42,31 @@ for (let j = 0; j < groupedData[2]['values'].length; j++) {
 // Make sure y plot points are working
 console.log(yplots);
 
-// Create Line Chart
+// // PLUG IN HYBRID ELECTRIC VEHICLES 
+// // Empty arrays to hold plot points
+// xphevs = []
+// yphevs = []
+
+// // For loop to fill x plot point arrays (PHEV)
+// for (let k = 0; k < groupedData[8]['values'].length; k++) {
+//   let xphev = groupedData[8]['values'][k]['key']
+//   xphevs.push(xphev);
+// };
+
+// // Make sure x plot points are working (PHEV)
+// console.log(xphevs);
+
+// // For loop to fill y plot point arrays (PHEV)
+// for (let l = 0; l < groupedData[8]['values'].length; l++) {
+//   let yphev = groupedData[8]['values'][l]['value']
+//   yphevs.push(yphev);
+// };
+
+// // Make sure y plot points are working (PHEV)
+// console.log(yphevs);
+
+
+// Create Bar Chart
 function barchart () {    
   var bardata = [{
       x: xplots,
@@ -95,7 +120,20 @@ function barchart () {
   Plotly.newPlot('bar', bardata, barlayout, config);
 };  
 
+// // Populate dropdown menu with names
+// function assignOptions() {
+//   var dropdownMenu = document.getElementById("selDataset");
+//   var list = ['Electric', 'Plug-in Hybrid'];
+//   for (var i = 0; i < list.length; i++) {
+//       var currentOption = document.createElement("option");
+//       currentOption.text = list[i];
+//       dropdownMenu.appendChild(currentOption);
+//   };
+// };
+
+
 barchart();
+// assignOptions();
 
 });
 
