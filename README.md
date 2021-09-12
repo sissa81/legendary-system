@@ -32,7 +32,7 @@ https://www.carvana.com/cars/tesla<br>
 * Create [interactive map]() of charging locations in California from [EV Charger Mapping](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
 
 ### Part II - Interactive JavaScript Table
-* Extract EV populations from 2010 to 2020 data in the [CSV file](https://github.com/sissa81/legendary-system/blob/main/choxie/Data/ZIP.xlsx)
+* Extract EV populations from 2010 to 2020 data in the [CSV file](https://github.com/sissa81/legendary-system/blob/main/choxie/Data/ZIP.csv)
 * [Bar chart](https://github.com/sissa81/legendary-system/blob/main/choxie/Images/EV_Population.png) to show the EV population from the registration data
 
 ### Part III - Flask App and Webscraping
