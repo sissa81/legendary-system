@@ -1,4 +1,4 @@
-# Supercharger Location Analysis and Visualizations
+# Supercharger and EV Analysis
 ![Image](Images/supercharger_tesla.jfif)
 
 ## Objective
