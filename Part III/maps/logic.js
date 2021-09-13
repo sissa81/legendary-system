@@ -1,32 +1,30 @@
-var myMap = L.map("map-id", {
+var myMap = L.map("map", {
   center: [36.44, -119.46],
   zoom: 6.4,
   // layers: [chargeMap, fuel_stations]
 });
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
 
 var url = "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?api_key=1YJXSdZ3NnAyyfQjUFBbTnYFAF9lp57gm2pKe94r&fuel_type=ELEC&status=E&access=public&state=CA&limit=all"
 
 d3.json(url).then(function(response) {
-  console.log(response);
+console.log(response);
   
-  var heatArray = [];
+var heatArray = [];
 
   for (var i = 0; i < response.length; i++) {
-    var fuel_stations = data[i].fuel_stations;
-    if (fuel_stations) {
-      heatArray.push([fuel_stations.latitude, fuel_stations.longitude]);
+    var location = response[i].location;
+
+    if (location) {
+      markers.addLayer(L.marker([location.coordinates[1], location.coordinates[0]])
+      .bindPopup(response[i].descriptor));
     }
   }
-  
-  var heat = L.heatLayer(heatArray, {
-    radius: 20,
-    blur: 35
-  }).addTo(myMap);
 
+  myMap.addLayer(markers);
 });
 
 //   var baseMaps = {
