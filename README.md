@@ -28,8 +28,10 @@ https://afdc.energy.gov/data/search?q=electricity<br>
 https://www.energy.ca.gov/files/zev-and-infrastructure-stats-data<br>
 **Carvana**<br>
 https://www.carvana.com/cars/tesla<br>
+**Wikipedia: Tesla Supercharger**<br>
+https://en.wikipedia.org/wiki/Tesla_Supercharger<br>
 
-## Extract, Transform, Load (ETL)
+## Extract, Transform, Load (ETL) Phase
 ### Part I -  Leaflet Interactive Map
 * Create [interactive map]() of charging locations in California from [EV Charger Mapping](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
 
