@@ -1,5 +1,5 @@
 // Read in csv from git
-const csvdata = "https://raw.githubusercontent.com/sissa81/legendary-system/main/choxie/Data/ZIP.csv";
+const csvdata = "https://raw.githubusercontent.com/sissa81/legendary-system/main/Data/ZIP.csv";
 
 // Fetch csv data and console log it
 // Convert # of vehicles to number instead of string
