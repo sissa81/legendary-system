@@ -12,7 +12,7 @@ mongo = PyMongo(app)
 def home():
     teslas = mongo.db.tesla.find()
 
-    return render_template("index.html", teslas=teslas)
+    return render_template("index1.html", teslas=teslas)
 
 @app.route("/scrape")
 def scrape():

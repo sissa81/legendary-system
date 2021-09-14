@@ -43,16 +43,3 @@ def scrape_all():
     browser.quit()   
 
     return teslas
-
-def scrape_list():
-    facts_url = 'https://en.wikipedia.org/wiki/Tesla_Supercharger'
-    tables = pd.read_html(facts_url)
-    supercharger_df = tables[0]
-
-    supercharger_df.columns = ['Quarter', 'Supercharger Stations']
-    supercharger_df.set_index('Quarter', inplace = True)
-    fact_table = supercharger_df.to_html()
-    fact_table.replace('\n', '')
-    
-    return fact_table
-     
